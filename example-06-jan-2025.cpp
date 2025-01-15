@@ -12,22 +12,10 @@ class MainWindow : public Gtk::Window {
 
 	private: Gtk::Grid grid;
 
-	private: Gtk::Button button01;
-	private: Gtk::Button button02;
-	private: Gtk::Button button03;
-	private: Gtk::Button button04;
-	private: Gtk::Button button05;
-	private: Gtk::Button button06;
-	private: Gtk::Button button07;
-	private: Gtk::Button button08;
-	private: Gtk::Button button09;
-	private: Gtk::Button button10;
-	private: Gtk::Button button11;
-	private: Gtk::Button button12;
-	private: Gtk::Button button13;
-	private: Gtk::Button button14;
-	private: Gtk::Button button15;
-	private: Gtk::Button button00;
+	private: Gtk::Button button01{"01"}, button02{"02"}, button03{"03"}, button04{"04"};
+	private: Gtk::Button button05{"05"}, button06{"06"}, button07{"07"}, button08{"08"};
+	private: Gtk::Button button09{"09"}, button10{"10"}, button11{"11"}, button12{"12"};
+	private: Gtk::Button button13{"13"}, button14{"14"}, button15{"15"}, button00{"  "};
 
 	private: Gtk::Button *buttons[ SIZE ][ SIZE ];
 
@@ -44,7 +32,7 @@ class MainWindow : public Gtk::Window {
 	public: ~MainWindow() override;
 };
 
-MainWindow::MainWindow() : button01("01"), button02("02"), button03("03"), button04("04"), button05("05"), button06("06"), button07("07"), button08("08"), button09("09"), button10("10"), button11("11"), button12("12"), button13("13"), button14("14"), button15("15"), button00("  ") {
+MainWindow::MainWindow() {
 	button01.signal_clicked().connect(sigc::bind(sigc::mem_fun(*this, &MainWindow::on_button_clicked), &button01));
 	button02.signal_clicked().connect(sigc::bind(sigc::mem_fun(*this, &MainWindow::on_button_clicked), &button02));
 	button03.signal_clicked().connect(sigc::bind(sigc::mem_fun(*this, &MainWindow::on_button_clicked), &button03));
